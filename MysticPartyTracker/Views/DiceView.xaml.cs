@@ -24,17 +24,17 @@ public partial class DiceView : ContentPage
         {
             int roll = dice.Roll();
             Console.WriteLine(roll);
-            total += roll;
             finalResult += $"Dado {i + 1} = {roll}\n";
-
-            if (i < quantity - 1)
-                finalResult += "\n";
+            total += roll;
         }
 
+        finalResult += $"Total = {total}";
+
+
         AllDicesResultLabel.Text = $"Foram jogados {quantity} dado(s) de {numberSides} lados.";
-        RandomNumber.Text = finalResult;
-        RandomNumber.Text = $"Resultado:\n\n{resultString}\n" +
-                            $"Total: {total}";
+        ResultString.Text = $"Resultado:\n\n{finalResult}\n";
+        RandomNumber.Text = $"Total: {total}";
+
     }
 
 }

@@ -2,6 +2,7 @@
 {
     public class Dice
     {
+        private static Random random = new Random();
         public int Side { get; set; }
 
         public Dice(int side)
@@ -11,7 +12,7 @@
 
         public int Roll()
         {
-            return Random.Shared.Next(Side) + 1;
+            return random.Next(Side) + 1;
         }
     }
 }
